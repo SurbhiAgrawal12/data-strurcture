@@ -1,0 +1,43 @@
+                                                  +-------------------+                         
+                                                  |                   |                         
+                                                  |  OneReach         |                         
+                                                  |                   |                         
+                                                  +--------+----------+                         
+                                                           |                                    
+                                                           |(1) POST /transcript-summary (custom API created at AWS  end)            
+                                                           |                                    
+                                                  +-------------------+                         
+                                                  |                   |                         
+                                                  | chatGPT API       |                         
+                                                  |                   |                         
+                                                  +--------+----------+                         
+                                                           |                    |                
+                              +------------------------->  |(2) Receive Summary |                         
+                              |                            |    from API        |                         
+                              |                            +--------+-----------+                         
+                              |                                     | (4) PATCH /interaction 
+                              |                                     | call to Salesforce to
+                              |                                     | save self-service summary                                
+                              |                            +-------------------+                                                
+                              |                            |   Salesforce      |                         
+                              |                            |                   |                         
+                              |                            +--------+----------+                         
+                              |                                     |                                    
+                   +----------+---------+                           | (6) POST /transcript-summary               
+                   |                    |              +-------------------+                     
+                   |       Agent        +------------->|                   |                     
+                   |                    |              |         AWS       |           
+                   +----------+---------+              |                   |                     
+                              |                        +---------+---------+                     
+                              |                                   |                                
+                              |                                   |   (5) POST /transcript-summary                             
+                              |                                   |                                
+                              |                        +---------------------+                    
+                              |                        |                     |                    
+                              |                        |chatGPT API          |                    
+                              |                        |                     |                    
+                              |                        +----------+----------+                    
+                              |                                                                  
+                              |                                                                  
+                                         
+                                                                                 

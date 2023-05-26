@@ -1,0 +1,28 @@
+stack data structure-> follows LIFO order
+
+operation of stack:
+1. push() -> insert
+2. pop() -> remove
+3. peek() -> get top element
+4. empty() -> 
+
+stack implementation:
+1. using arrays
+2. using linkedlist
+
+
+Using Arrays, implemet push operation process:
+1. topIndex = -1
+2. check the size of array.
+4. if space is not available, return stack overflow.
+3. if space is available, insert the element and increment topIndex(top++). arr[top] = 22
+
+Using Arrays, implemet pop operation process:
+1. check element is present or not.
+2. if element is not present, return stack underflow.
+3. if element is present, remove the element and deccrement the top. (top--)
+4. how we will check , element is present or not, so if top() >= 0, then element is present.
+
+
+empty()
+if top == -1, that means stack is empty

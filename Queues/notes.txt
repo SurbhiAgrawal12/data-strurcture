@@ -1,0 +1,62 @@
+Queue is a data structure which follows FIFO order.
+push always rear pe hoga
+and pop always front se hoga
+
+queue can be implemented through:
+1. arrays
+2. queues
+
+push function = enqueue()
+pop function = dequeue()
+
+Types of Queues:
+1. normal queue( FIFO)
+2. circular queue
+3. DEqueue
+4. input restricted queue
+5. output restricted queue
+
+inbuilt methods of queue
+1. shift() => pop from front
+2. pop() => pop from back
+3. unshift() => push from front
+4. push() => push from back
+
+in case of queue, if u wanted to implement queue operations without using inbuilt methods:
+so use pointers:
+1. front
+2. rear
+
+in case of stack, we use only one pointer
+1. top
+
+Note: The initialization of the front and rear pointers depends on the specific implementation 
+and design choices.
+1. In a normal queue implementation, the front and rear pointers typically start at -1 
+    to indicate an empty queue.
+        1.1. When an element is enqueued, the rear pointer is incremented and set to 0 if it
+             was -1 (for the first element)
+        1.2 When an element is dequeued, the front pointer is incremented, and if it becomes 
+            equal to the rear pointer, it means the queue is now empty, so both front and rear
+            are reset to -1.
+
+2. In a circular queue implementation, the front and rear pointers can also start at -1 
+   to indicate an empty queue. 
+        2.1 When an element is enqueued, the rear pointer is incremented 
+            (and wrapped around if it exceeds the queue's capacity). 
+        2.2 When an element is dequeued, the front pointer is incremented 
+            (and wrapped around if it exceeds the queue's capacity).
+
+
+Inshort:
+1. push from front: front--
+2. pop from front : front++
+3. push from bacK: rear++
+4. pop from back: rear--
+
+queue is empty: front = -1
+queue is full:
+    1. normal queue : front = 0; and rear = size-1
+    2. circular queue: front = 0; and rear = size-1 || this.rear == (this.front - 1) % (this.size - 1) (ie rear is oneindex before the front index)
+    3. DEqueue: front = 0; and rear = size-1 || this.front == this.rear + 1
+queue has   only one element: this.front == this.rear
